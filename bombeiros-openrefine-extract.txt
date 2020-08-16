@@ -1,0 +1,2511 @@
+﻿[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "descricao",
+          "expression": "isBlank(value)",
+          "columnName": "descricao",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "data",
+    "expression": "grel:toDate(value, false, \"dd-MM-yyyy - hh:mm\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column data using expression grel:toDate(value, false, \"dd-MM-yyyy - hh:mm\")"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "descricao",
+          "expression": "isBlank(value)",
+          "columnName": "descricao",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": ".* [Aa]venida",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/[Aa]venida/,\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/[Aa]venida/,\"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/\\s+/,' ')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "endereco",
+    "expression": "value.replace(/Avenida Avenida/,\"Avenida \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column endereco using expression value.replace(/Avenida Avenida/,\"Avenida \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "endereco",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column endereco using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "bairro",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column bairro using expression value.trim()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Busca e Salvamento/Abrir Imovel",
+          "Busca e Salvamento/Abrir Imóvel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento/Abrir Imóvel"
+      },
+      {
+        "from": [
+          "Acidente Domestico/Causado por Objeto Cortante",
+          "Acidente Doméstico/Causado por Objeto Cortante"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico/Causado por Objeto Cortante"
+      },
+      {
+        "from": [
+          "Caminhao x Obstaculo Fixo/Poste",
+          "Caminhão x Obstáculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Obstáculo Fixo/Poste"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Cacamba de Entulho",
+          "Carro x Obstáculo Fixo/Caçamba de Entulho"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Caçamba de Entulho"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Placa",
+          "Carro x Obstáculo Fixo/Placa"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Placa"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Poste",
+          "Carro x Obstáculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Poste"
+      },
+      {
+        "from": [
+          "Queda de Nivel",
+          "Queda de Nível"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda de Nível"
+      },
+      {
+        "from": [
+          "Incendio em Edificio Residencial",
+          "Incêndio em Edifício Residencial"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Edifício Residencial"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Canteiro",
+          "Carro x Obstáculo Fixo/Canteiro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Canteiro"
+      },
+      {
+        "from": [
+          "Vazamento de Gas Combustivel",
+          "Vazamento de Gás Combustível"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vazamento de Gás Combustível"
+      },
+      {
+        "from": [
+          "Emergencia Medica/OVACE",
+          "Emergência Médica/OVACE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica/OVACE"
+      },
+      {
+        "from": [
+          "Agressao/Vias de Fato",
+          "Agressão/Vias de Fato"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Agressão/Vias de Fato"
+      },
+      {
+        "from": [
+          "Suicidio",
+          "Suícidio"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Suícidio"
+      },
+      {
+        "from": [
+          "Emergencia Medica/Auxilo a Gestante",
+          "Emergência Médica/Auxílo a Gestante"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica/Auxílo a Gestante"
+      },
+      {
+        "from": [
+          "Desabamento de Edificacao",
+          "Desabamento de Edificação"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Desabamento de Edificação"
+      },
+      {
+        "from": [
+          "Moto x Obstaculo Fixo/Poste",
+          "Moto x Obstáculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Moto x Obstáculo Fixo/Poste"
+      },
+      {
+        "from": [
+          "Incendio em Comercio",
+          "Incêndio em Comércio"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Comércio"
+      },
+      {
+        "from": [
+          "Capotamento/Caminhao",
+          "Capotamento/Caminhão"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Capotamento/Caminhão"
+      },
+      {
+        "from": [
+          "Acidente Domestico/Causado por Animal e/ou Inseto",
+          "Acidente Doméstico/Causado por Animal e/ou Inseto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico/Causado por Animal e/ou Inseto"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Muro",
+          "Carro x Obstáculo Fixo/Muro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Muro"
+      },
+      {
+        "from": [
+          "Emergência Médica/PCR",
+          "Emergencia Medica/PCR"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica/PCR"
+      },
+      {
+        "from": [
+          "Acidente Domestico/Causado por Choque Eletrico",
+          "Acidente Doméstico/Causado por Choque Elétrico"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico/Causado por Choque Elétrico"
+      },
+      {
+        "from": [
+          "Seguranca",
+          "Segurança"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Segurança"
+      },
+      {
+        "from": [
+          "Busca e Salvamento/Resgate de Obito",
+          "Busca e Salvamento/Resgate de Óbito"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento/Resgate de Óbito"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Cerca",
+          "Carro x Obstáculo Fixo/Cerca"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Cerca"
+      },
+      {
+        "from": [
+          "Caminhao x Pedestre",
+          "Caminhão x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Pedestre"
+      },
+      {
+        "from": [
+          "Incendio em Residencia",
+          "Incêndio em Residência"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Residência"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Emergência Médica/Queimadura",
+          "Emergencia Medica/Queimadura"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica/Queimadura"
+      },
+      {
+        "from": [
+          "Incendio em Lixo e/ou Entulho",
+          "Incêndio em Lixo e/ou Entulho"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Lixo e/ou Entulho"
+      },
+      {
+        "from": [
+          "Bicicleta x Obstaculo Fixo/Muro",
+          "Bicicleta x Obstáculo Fixo/Muro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bicicleta x Obstáculo Fixo/Muro"
+      },
+      {
+        "from": [
+          "Bicicleta x Obstaculo Fixo/Poste",
+          "Bicicleta x Obstáculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bicicleta x Obstáculo Fixo/Poste"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Edificacao",
+          "Carro x Obstáculo Fixo/Edificação"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Edificação"
+      },
+      {
+        "from": [
+          "Incendio em Meio de Transporte",
+          "Incêndio em Meio de Transporte"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Meio de Transporte"
+      },
+      {
+        "from": [
+          "Acidente Trabalho/Choque Eletrico",
+          "Acidente Trabalho/Choque Elétrico"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Trabalho/Choque Elétrico"
+      },
+      {
+        "from": [
+          "Moto x Obstaculo Fixo/Canteiro",
+          "Moto x Obstáculo Fixo/Canteiro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Moto x Obstáculo Fixo/Canteiro"
+      },
+      {
+        "from": [
+          "Carroca x Pedestre",
+          "Carroça x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carroça x Pedestre"
+      },
+      {
+        "from": [
+          "Busca e Salvamento/Resgate de Vítima de Afogamento",
+          "Busca e Salvamento/Resgate de Vitima de Afogamento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento/Resgate de Vítima de Afogamento"
+      },
+      {
+        "from": [
+          "Corte e/ou Poda de Arvore",
+          "Corte e/ou Poda de Árvore"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Corte e/ou Poda de Árvore"
+      },
+      {
+        "from": [
+          "Carro x Obstaculo Fixo/Arvore",
+          "Carro x Obstáculo Fixo/Árvore"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Árvore"
+      },
+      {
+        "from": [
+          "Moto x Obstaculo Fixo/Cacamba de Entulho",
+          "Moto x Obstáculo Fixo/Caçamba de Entulho"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Moto x Obstáculo Fixo/Caçamba de Entulho"
+      },
+      {
+        "from": [
+          "Acidente Domestico/Causado por Esmagamento de Membro",
+          "Acidente Doméstico/Causado por Esmagamento de Membro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Domestico/Causado por Esmagamento de Membro"
+      },
+      {
+        "from": [
+          "Carroca x Obstaculo Fixo/Placa",
+          "Carroça x Obstáculo Fixo/Placa"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carroça x Obstáculo Fixo/Placa"
+      },
+      {
+        "from": [
+          "Carroca x Bicicleta",
+          "Carroça x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carroça x Bicicleta"
+      },
+      {
+        "from": [
+          "Caminhao x Carro",
+          "Caminhão x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Carro"
+      },
+      {
+        "from": [
+          "Acidente Causado por Descarga Eletrica",
+          "Acidente Causado por Descarga Elétrica"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Causado por Descarga Elétrica"
+      },
+      {
+        "from": [
+          "Captura de Animal/Furao",
+          "Captura de Animal/Furão"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal/Furão"
+      },
+      {
+        "from": [
+          "Captura de Animal/Tamandua",
+          "Captura de Animal/Tamanduá"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal/Tamanduá"
+      },
+      {
+        "from": [
+          "Moto x Obstaculo Fixo/Muro",
+          "Moto x Obstáculo Fixo/Muro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Moto x Obstáculo Fixo/Muro"
+      },
+      {
+        "from": [
+          "Incendio em Deposito em Geral",
+          "Incêndio em Depósito em Geral"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Depósito em Geral"
+      },
+      {
+        "from": [
+          "Captura de Animal/Gambá",
+          "Captura de Animal/Gamba"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal/Gambá"
+      },
+      {
+        "from": [
+          "Caminhao x Bicicleta",
+          "Caminhão x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Bicicleta"
+      },
+      {
+        "from": [
+          "Saida de Pista",
+          "Saída de Pista"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Saída de Pista"
+      },
+      {
+        "from": [
+          "Agressao/F.A.B",
+          "Agressão/F.A.B"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Agressão/F.A.B"
+      },
+      {
+        "from": [
+          "Agressao/F.A.F",
+          "Agressão/F.A.F"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Agressão/F.A.F"
+      },
+      {
+        "from": [
+          "Isolamento de Area",
+          "Isolamento de Área"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Isolamento de Área"
+      },
+      {
+        "from": [
+          "Caminhao x Caminhao",
+          "Caminhão x Caminhão"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Caminhão"
+      },
+      {
+        "from": [
+          "Emergência Médica",
+          "Emergencia Medica"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica"
+      },
+      {
+        "from": [
+          "Emergencia Medica/Clinico",
+          "Emergência Médica/Clínico"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica/Clínico"
+      },
+      {
+        "from": [
+          "Incêndio em Vegetação",
+          "Incendio em Vegetacao"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Vegetação"
+      },
+      {
+        "from": [
+          "Captura de Animal/Gaviao",
+          "Captura de Animal/Gavião"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal/Gavião"
+      },
+      {
+        "from": [
+          "Carroca x Obstaculo Fixo/Poste",
+          "Carroça x Obstáculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carroça x Obstáculo Fixo/Poste"
+      },
+      {
+        "from": [
+          "Captura de Animal/Passaro",
+          "Captura de Animal/Pássaro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal/Pássaro"
+      },
+      {
+        "from": [
+          "Acidente Trabalho/Queda (nivel/altura)",
+          "Acidente Trabalho/Queda (nível/altura)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Trabalho/Queda (nível/altura)"
+      },
+      {
+        "from": [
+          "Palestra/Demonstração",
+          "Palestra/Demonstracao"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Palestra/Demonstração"
+      },
+      {
+        "from": [
+          "Carroca x Moto",
+          "Carroça x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carroça x Moto"
+      },
+      {
+        "from": [
+          "Acidente Domestico/Causado por Queimadura",
+          "Acidente Doméstico/Causado por Queimadura"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico/Causado por Queimadura"
+      },
+      {
+        "from": [
+          "Busca e Salvamento/Abrir Veiculo",
+          "Busca e Salvamento/Abrir Veículo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento/Abrir Veículo"
+      },
+      {
+        "from": [
+          "Onibus x Bicicleta",
+          "Ônibus x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ônibus x Bicicleta"
+      },
+      {
+        "from": [
+          "Caminhao x Moto",
+          "Caminhão x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Moto"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Avenida"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Caminhao x Onibus"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Caminhão x Ônibus"
+      },
+      {
+        "from": [
+          "IncÃªndio em ComÃ©rcio/Comercial atÃ© 2 pavimentos LocalizaÃ§Ã£o:"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Comércio/Comercial até 2 pavimentos"
+      },
+      {
+        "from": [
+          "Acidente Dom�stico/Causado por Esmagamento de Membro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico/Causado por Esmagamento de Membro"
+      },
+      {
+        "from": [
+          "Carro x Moto Rodovia do Arroz-Vila Nova"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Moto"
+      },
+      {
+        "from": [
+          "Carro x Pedestre Getulio Vargas-Anita Garibaldi"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Pedestre"
+      },
+      {
+        "from": [
+          "C/"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Captura de Animal/Cobra LocalizaÃ§Ã£o:"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal/Cobra"
+      },
+      {
+        "from": [
+          "108, 1250 Bairro: Vila Nova Referência:"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": " "
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "� 1Dnibus",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/� 1Dnibus/,\"Ônibus\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/� 1Dnibus/,\"Ônibus\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "carroca",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(\"carroca\",\"carroça\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(\"carroca\",\"carroça\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/carroca/,\"carroça\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/carroca/,\"carroça\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/[Cc]aminhao/,\"Caminhão\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/[Cc]aminhao/,\"Caminhão\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/[Mm]edico/,\"médico\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/[Mm]edico/,\"médico\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/[Mm]edica/,\"médica\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/[Mm]edica/,\"médica\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value.replace(/[Ee]mergencia/,\"emergência\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column descricao using expression value.replace(/[Ee]mergencia/,\"emergência\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "",
+          " "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Onibus x Pedestre",
+          "Ônibus x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ônibus x Pedestre"
+      },
+      {
+        "from": [
+          "Onibus x Carro",
+          "Ônibus x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ônibus x Carro"
+      },
+      {
+        "from": [
+          "Acidente Domestico/Causado por Esmagamento de Membro",
+          "Acidente Doméstico/Causado por Esmagamento de Membro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico/Causado por Esmagamento de Membro"
+      },
+      {
+        "from": [
+          "Onibus x Moto",
+          "Ônibus x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ônibus x Moto"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Busca e Salvamento/Resgate de � 1Cbito"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento/Resgate de Óbito"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Seguran�a"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Segurança"
+      },
+      {
+        "from": [
+          "EmergÃªncia MÃ©dica/ClÃ­nico LocalizaÃ§Ã£o:"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "�",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Corte e/ou Poda de �rvore"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Corte e/ou Poda de Árvore"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "�",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Inc�ndio em Meio de Transporte"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio em Meio de Transporte"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "�",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Queda de N�vel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda de Nível"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "�",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Busca e Salvamento/Abrir Ve�culo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento/Abrir Veículo"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "descricao",
+          "columnName": "descricao",
+          "query": "�",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Carro x Obst�culo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Obstáculo Fixo/Poste"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "descricao",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "tipo_ocorrência",
+    "columnInsertIndex": 16,
+    "description": "Create column tipo_ocorrência at index 16 based on column descricao using expression grel:value"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Captura de Animal/Cobra",
+          "Captura de Animal/Cachorro",
+          "Captura de Animal/Gambá",
+          "Captura de Animal/Gato",
+          "Captura de Animal/Lagarto",
+          "Captura de Animal/Cavalo",
+          "Captura de Animal/Pássaro",
+          "Captura de Animal/Porco Espinho",
+          "Captura de Animal",
+          "Captura de Animal/Morcego",
+          "Captura de Animal/Tamanduá",
+          "Captura de Animal/Capivara",
+          "Captura de Animal/Boi/Vaca",
+          "Captura de Animal/Aranha",
+          "Captura de Animal/Coruja",
+          "Captura de Animal/Macaco",
+          "Captura de Animal/Furão",
+          "Captura de Animal/Gavião",
+          "Captura de Animal/Guatí",
+          "Captura de Animal/Cabrito",
+          "Captura de Animal/Cobra Rodovia BR 101-Pirabeiraba Centro",
+          "Captura de Animal/Não identificado",
+          "Captura de Animal/Quati",
+          "Captura de Animal/Tartaruga",
+          "Captura de Animal/Tatu",
+          "Captura de Animal/Taturana"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Carro x Obstáculo Fixo/Poste",
+          "Carro x Obstáculo Fixo/Muro",
+          "Carro x Obstáculo Fixo/Árvore",
+          "Carro x Obstáculo Fixo/Caçamba de Entulho",
+          "Carro x Obstáculo Fixo/Placa",
+          "Carro x Obstaculo Fixo/Barranco",
+          "Carro x Obstáculo Fixo/Canteiro",
+          "Carro x Obstáculo Fixo/Edificação",
+          "Carro x Obstáculo Fixo/Cerca",
+          "Carro x Obstáculo Fixo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Incêndio em Meio de Transporte",
+          "Incêndio em Meio de Transporte/Automóvel leve",
+          "Incêndio em Meio de Transporte/Carreta baú",
+          "Incêndio em Meio de Transporte/Caminhão caçamba 2 eixos",
+          "Incêndio em Meio de Transporte/Mocicleta",
+          "Incêndio em Meio de Transporte/Caminhão caçamba 3 eixos",
+          "Incêndio em Meio de Transporte/Caminhão caçamba 4 eixos",
+          "Incêndio em Meio de Transporte/Ônibus rodoviário 2 eixos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Caminhão x Obstaculo Fixo/Muro",
+          "Caminhão x Obstáculo Fixo/Poste",
+          "Caminhão x Obstaculo Fixo/Arvore",
+          "Caminhão x Obstaculo Fixo",
+          "Caminhão x Obstaculo Fixo/Cacamba de Entulho",
+          "Caminhão x Obstaculo Fixo/Canteiro",
+          "Caminhão x Obstáculo Fixo/Edificação"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Vazamento de Gás Combustível",
+          "Vazamento de Gás Combustível/Resid. unifamiliar: botijão individual",
+          "Vazamento de Gás Combustível/Resid. multifamiliar c/ central gás",
+          "Vazamento de Gás Combustível/Resid. multifamiliar: botijão individual",
+          "Vazamento de Gás Combustível/Comercial: botijão individual",
+          "Vazamento de Gás Combustível/Comercial com central de gás",
+          "Vazamento de Gás Combustível/Industrial com central de gás"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vazamento de Gás"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Acidente Trabalho/Esmagamento de Membro",
+          "Acidente Trabalho/Queda (nível/altura)",
+          "Acidente Trabalho/Ferimento por Objeto Cortante",
+          "Acidente Trabalho/Desmoronamento",
+          "Acidente Trabalho/Choque Elétrico",
+          "Acidente Trabalho",
+          "Acidente Trabalho/Soterramento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trabalho"
+      },
+      {
+        "from": [
+          "Moto x Obstáculo Fixo/Poste",
+          "Moto x Obstáculo Fixo/Muro",
+          "Moto x Obstáculo Fixo/Caçamba de Entulho",
+          "Moto x Obstáculo Fixo/Canteiro",
+          "Moto x Obstaculo Fixo/Placa",
+          "Moto x Obstaculo Fixo/Arvore",
+          "Moto x Obstaculo Fixo/Cerca"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Busca e Salvamento/Auxiliar Pessoa (s)",
+          "Busca e Salvamento/Abrir Elevador",
+          "Busca e Salvamento/Resgate de Óbito",
+          "Busca e Salvamento/Resgate de Vítima de Afogamento",
+          "Busca e Salvamento/Abrir Veículo",
+          "Busca e Salvamento/Abrir Imóvel",
+          "Busca e Salvamento/Bens Perdidos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Busca e Salvamento"
+      },
+      {
+        "from": [
+          "Incêndio em Residência",
+          "Incêndio em Residência/Alvenaria de 1 pavimento",
+          "Incêndio em Residência/Madeira de 1 pavimento",
+          "Incêndio em Residência/Alvenaria de 2 pavimentos",
+          "Incêndio em Residência/Mista de 1 pavimento",
+          "Incêndio em Residência/Madeira de 2 pavimentos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Incêndio em Edifício Residencial",
+          "Incêndio em Edifício Residencial/Residencial mais de 4 pavimentos",
+          "Incêndio em Edifício Residencial/Residencial até 4 pavimentos",
+          "Incêndio em Edificação Pública/Hospital/PA/PSF",
+          "Incêndio em Edificação Pública",
+          "Incêndio em Edificação Pública/Escola de educação Municipal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Emergência Médica/Clínico",
+          "Emergência Médica/PCR",
+          "Emergência Médica/OVACE",
+          "Emergência Médica/Auxílo a Gestante",
+          "Emergência Médica",
+          "Emergência Médica/Queimadura"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Emergência Médica"
+      },
+      {
+        "from": [
+          "Acidente Doméstico/Causado por Objeto Cortante",
+          "Acidente Doméstico/Causado por Esmagamento de Membro",
+          "Acidente Doméstico/Causado por Queimadura",
+          "Acidente Doméstico",
+          "Acidente Doméstico/Causado por Animal e/ou Inseto",
+          "Acidente Doméstico/Causado por Choque Elétrico"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente Doméstico"
+      },
+      {
+        "from": [
+          "Incêndio em Lixo e/ou Entulho",
+          "Incêndio em Lixo e/ou Entulho/Terreno baldio",
+          "Incêndio em Lixo e/ou Entulho/Imóvel particular",
+          "Incêndio em Lixo e/ou Entulho/Margens de estrada/rua",
+          "Incêndio em Lixo e/ou Entulho/Imóvel público"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Incêndio em Comércio",
+          "Incêndio em Comércio/Comercial até 2 pavimentos",
+          "Incêndio em Comércio/Comercial até 4 pavimentos",
+          "Incêndio em Comércio/Comercial mais de 4 pavimentos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Carroça x Obstáculo Fixo/Poste",
+          "Carroça x Obstáculo Fixo/Placa",
+          "Carroça x Obstáculo Fixo",
+          "Carroça x Obstáculo Fixo/Canteiro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Incêndio em Indústria/Metal mecânica",
+          "Incêndio em Indústria/Moveleira",
+          "Incêndio em Indústria/Química",
+          "Incêndio em Indústria/Textil"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Incêndio em Depósito em Geral",
+          "Incêndio em Depósito em Geral/Depósito de sólidos combustíveis",
+          "Incêndio em Depósito em Geral/Depósito de sólidos inflamáveis",
+          "Incêndio em Depósito em Geral/Depósito de líquidos inflamáveis"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Bicicleta x Bicicleta",
+          "Bicicleta x Pedestre",
+          "Bicicleta x Obstáculo Fixo/Muro",
+          "Bicicleta x Obstáculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Incendio em Bem Publico/Poste/Transformador",
+          "Incendio em Bem Publico/Altdoor/Placa de Propaganda",
+          "Incendio em Bem Publico/Telefone Publico"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Incendio em Edificio Comercial",
+          "Incendio em Edificio Publico",
+          "Incendio em Edificio Industrial"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incendio"
+      },
+      {
+        "from": [
+          "Incêndio em Equipamento Público",
+          "Incêndio em Equipamento Público/Ponte"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Carro x Bicicleta",
+          "Carro x Bicicleta Santos Dumont-Santo Antonio"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Ônibus x Bicicleta",
+          "Onibus x Obstaculo Fixo/Poste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Acidente Causado por Animal",
+          "Acidente Causado por Descarga Elétrica"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Carroca x Obstaculo Fixo/Muro",
+          "Carroca x Obstaculo Fixo/OVACE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Trem x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Caminhão x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Carro x Moto Beira Rio-America"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Carro x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Carro x Rio/Valo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Caminhão x Caminhão"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Capotamento/Retroescavadeira"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Moto x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Desabamento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Incêndio em Vegetação"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Agressao/Causado por Objeto Cortante"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Briga"
+      },
+      {
+        "from": [
+          "Onibus x Onibus"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Isolamento de Área"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Onibus x Animal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Carro x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Atropelamento"
+      },
+      {
+        "from": [
+          "Caminhão x Rio/Valo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Moto x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Teste x Teste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Carro x Carro Rodovia do Arroz-Vila Nova"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Carro"
+      },
+      {
+        "from": [
+          "Incendio em Industria"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Caminhão x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Atropelamento"
+      },
+      {
+        "from": [
+          "Caminhão x Ônibus"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Outros"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Ônibus x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Incendio"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Carro x Moto Santos Dumont-Distrito Industrial"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Carro x Moto"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Capotamento/Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Retroescavadeira x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Queda de Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Moto x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Atropelamento"
+      },
+      {
+        "from": [
+          "Carro x Carro Getulio Vargas-Anita Garibaldi"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Trem x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Atropelamento"
+      },
+      {
+        "from": [
+          "Carroça x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Atropelamento"
+      },
+      {
+        "from": [
+          "Corte e/ou Poda de Árvore"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Corte de Árvore"
+      },
+      {
+        "from": [
+          "Queda de Moto Beira Rio-America/Joinville"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Carro x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Agressão"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outro"
+      },
+      {
+        "from": [
+          "Captura de Animal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Captura de Animal"
+      },
+      {
+        "from": [
+          "Briga"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outro"
+      },
+      {
+        "from": [
+          "Carro x Carroca"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Ônibus x Pedestre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Atropelamento"
+      },
+      {
+        "from": [
+          "Incendio em Publica e/ou de Prestacao de Servico"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incendio"
+      },
+      {
+        "from": [
+          "Limpeza de Pista de Rolamento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outro"
+      },
+      {
+        "from": [
+          "Caminhão x Animal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Queda de Moto LocalizaÃ§Ã£o:"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Alagamento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outro"
+      },
+      {
+        "from": [
+          "Carroça x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Carro x Carro Santos Dumont-Distrito Industrial"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "108-Vila Nova"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Capotamento/Caminhão"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "418-Pirabeiraba"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Esq. com"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Trem x Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "caminhoneta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Acidente Aereo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Desabamento de Edificação"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Trem x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Carro x Animal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Desmoronamento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Saída de Pista"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Acidente Esportivo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Caminhão x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Agressão/Vias de Fato"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Moto x Animal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Caminhão x Carro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Vazamento de Produtos Perigosos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Bicicleta x Animal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Vitima cadeirante Carro x Cadeira de roda. Usb 49 solicitou apoio da UR 48. Unimed. Fiesta MKN 4174"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Queda de altura (> 3 metros)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda"
+      },
+      {
+        "from": [
+          "Outro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Vendaval e/ou Cobrir Telhado"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Outros"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Palestra/Demonstração"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Palestra"
+      },
+      {
+        "from": [
+          "Carroça x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Deslizamento"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Prox."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      },
+      {
+        "from": [
+          "Carro x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Ônibus x Moto"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      },
+      {
+        "from": [
+          "Queda dentro do Onibus"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda"
+      },
+      {
+        "from": [
+          "Queda de Bicicleta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda"
+      },
+      {
+        "from": [
+          "Agressão/F.A.B"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      },
+      {
+        "from": [
+          "Queda de Nível"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda"
+      },
+      {
+        "from": [
+          "Agressão/F.A.F"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Outros"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "tipo_ocorrência",
+          "expression": "isBlank(value)",
+          "columnName": "tipo_ocorrência",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "tipo_ocorrência",
+          "expression": "isBlank(value)",
+          "columnName": "tipo_ocorrência",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "descricao",
+          "expression": "value",
+          "columnName": "descricao",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "caminhoneta",
+                "l": "caminhoneta"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "caminhoneta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêncio em Meio de Transporte/Caminhonete"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Incêndio em Indústria"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      },
+      {
+        "from": [
+          "Incêndio em Equipamento Público/Poste/Transformador"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Incêndio"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "latitude",
+    "index": 20,
+    "description": "Move column latitude to position 20"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "longitude",
+    "index": 20,
+    "description": "Move column longitude to position 20"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "endereco_completo",
+    "index": 20,
+    "description": "Move column endereco_completo to position 20"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_ocorrência",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Carro x Cadeira de roda"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Acidente de Trânsito"
+      }
+    ],
+    "description": "Mass edit cells in column tipo_ocorrência"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descricao",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Queda de Moto LocalizaÃ§Ã£o:"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Queda de Moto"
+      }
+    ],
+    "description": "Mass edit cells in column descricao"
+  }
+]
